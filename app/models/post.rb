@@ -2,7 +2,7 @@ class Post < ApplicationRecord
   has_many :comments
   has_many :likes
   belongs_to :author, class_name: 'User'
-  
+
   after_create :update_post_counter
 
   def most_recent_comments
