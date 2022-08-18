@@ -1,2 +1,17 @@
-<h1>Users#show</h1>
-<p>User details</p>
+<%= render partial: "li_user", locals: { user: @user } %>
+
+<div class="bio">
+    <h2>Bio</h2>
+    <p><%= @user.bio %></p>
+</div>
+
+<section>
+    <% @user.most_recent_posts.each do |post| %>
+        <a href="<%= user_post_path(post.author_id, post) %>">
+            <%= render partial: "li_post", locals: { post: post } %>
+        </a>
+    <% end %>
+</section>
+<section class="action-butons">
+    <%= link_to "See all posts", user_posts_path(@user), class:'btn' %>
+</section> 
