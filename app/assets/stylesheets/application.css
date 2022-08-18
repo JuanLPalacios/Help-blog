@@ -1,15 +1,103 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+* {
+  box-sizing: border-box;
+}
+
+header.post-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.comment-user {
+  width: 3rem;
+  font-weight: bold;
+}
+
+.comment-card {
+  display: flex;
+  gap: 10px;
+}
+
+section.comment-list {
+  margin-top: 10px;
+}
+
+.btn {
+  display: inline-block;
+  border: none;
+  padding: 5px 10px;
+  background: #fafafa;
+  color: inherit;
+  font-weight: bold;
+  text-decoration: inherit;
+}
+
+.btn.disabled {
+  background: #dfdfdf;
+}
+
+section.action-butons {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin: 24px;
+}
+
+a {
+  text-decoration: inherit;
+}
+
+a > article {
+  color: initial;
+}
+
+a > article:hover {
+  filter: brightness(1.1);
+}
+
+body {
+  margin: 0;
+  background: #08f;
+}
+
+article.user-card,
+.bio,
+article.post-card,
+.comment-list,
+article.post {
+  margin: 24px;
+  background: #fafafa;
+  padding: 10px;
+}
+
+article.post {
+  margin-bottom: 10px;
+}
+
+article.post-card {
+  margin-block: 10px;
+  padding-bottom: 28px;
+}
+
+article.post-card span {
+  float: right;
+}
+
+article.user-card {
+  display: flex;
+  gap: 14px;
+}
+
+article.user-card > div {
+  flex-grow: 1;
+}
+
+article.user-card span {
+  float: right;
+}
+
+article.user-card > img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+}
