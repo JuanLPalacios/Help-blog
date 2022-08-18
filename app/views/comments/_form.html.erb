@@ -1,0 +1,6 @@
+<%= form_with(model: comment) do |form| %>
+  <div>
+    <%= form.text_area :text, placeholder:'Contents' %>
+    <%= form.submit 'Comment' %>
+  </div>
+<% end %>
