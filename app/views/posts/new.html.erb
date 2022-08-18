@@ -1,9 +1,10 @@
-<h1>New post</h1>
+<section class="edit-post">
+  <h1>New post</h1>
 
-<%= render "form", post: [@user, @post] %>
+  <%= render "form", post: [@user, @post] %>
 
-<br>
-
-<div>
-  <%= link_to "Back to posts", user_posts_path %>
-</div>
+</section>
+  
+<section class="action-butons">
+  <%= link_to "Back to posts", user_posts_path, class: 'btn' %>
+</section>
