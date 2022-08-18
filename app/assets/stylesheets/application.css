@@ -2,6 +2,12 @@
   box-sizing: border-box;
 }
 
+header.post-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .comment-user {
   width: 3rem;
   font-weight: bold;
@@ -57,10 +63,15 @@ body {
 article.user-card,
 .bio,
 article.post-card,
-.comment-list {
+.comment-list,
+article.post {
   margin: 24px;
   background: #fafafa;
   padding: 10px;
+}
+
+article.post {
+  margin-bottom: 10px;
 }
 
 article.post-card {
