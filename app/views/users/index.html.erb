@@ -1,2 +1,3 @@
-<h1>Users#index</h1>
-<p>A list of ussers</p>
+<% @users.each do |user| %>
+    <%= render partial: "li_user", locals: { user: user } %>
+<% end %>
