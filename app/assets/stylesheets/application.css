@@ -2,33 +2,72 @@
   box-sizing: border-box;
 }
 
+a.btn {
+    display: inline-block;
+    border: none;
+    padding: 5px 10px;
+    background: #fafafa;
+    color: inherit;
+    font-weight: bold;
+    text-decoration: inherit;
+}
+
+section.action-butons {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin: 24px;
+}
+
 a {
-  text-decoration: inherit;
+    text-decoration: inherit;
 }
 
 a > article {
-  color: initial;
+    color: initial;
 }
 
 a > article:hover {
-  filter: brightness(1.1);
+    filter: brightness(1.1);
 }
 
 body {
-  margin: 0;
-  background: #08f;
+    margin: 0;
+    background: #0088ff;
+}
+
+article.user-card,
+.bio,
+article.post-card {
+    margin: 24px;
+    background: #fafafa;
+    padding: 10px;
+}
+
+article.post-card {
+    margin-block: 10px;
+    padding-bottom: 28px;
+}
+
+article.post-card span {
+    float: right;
 }
 
 article.user-card {
-  display: flex;
-  gap: 14px;
-  margin: 24px;
-  background: #fafafa;
-  padding: 10px;
+    display: flex;
+    gap: 14px;
+}
+
+article.user-card > div {
+    flex-grow: 1;
+}
+
+article.user-card span {
+    float: right;
 }
 
 article.user-card > img {
-  width: 100px;
-  height: 100px;
-  object-fit: cover;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
 }
