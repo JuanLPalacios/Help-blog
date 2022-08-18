@@ -1,2 +1,19 @@
-<h1>Posts#index</h1>
-<p>Here is a list of posts for a given user</p>
+<%= render partial: "li_user", locals: { user: @user } %>
+<section>
+    <% @posts.each do |post| %>
+        <a href="<%= user_post_path(post.author_id, post) %>">
+            <%= render partial: "li_post", locals: { post: post } %>
+        </a>
+        <section class="comment-list box">
+            <% post.most_recent_comments.each do |comment| %>
+                <%= render partial: "comment", locals: { comment: comment } %>
+            <% end %>
+        </section>
+    <% end %>
+</section>
+<section class="action-butons">
+    <% (1..@n_pages).each do |page| %>
+        <%= link_to page.to_s, user_posts_path(@user,page: page), class:'btn' if @page != page %>
+        <%= page.to_s if @page == page %>
+    <% end %>
+</section> 
