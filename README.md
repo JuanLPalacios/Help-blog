@@ -9,9 +9,8 @@ a example ruby on rails Help blog for sharing info in times of need
 
 
 ## Getting Started
-Then
+Start by seting up the enviroment
 ```
-cd Info-threader-blog
 bundle install
 rails db:create
 rails db:schema:load
