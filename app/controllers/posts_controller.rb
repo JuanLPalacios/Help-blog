@@ -7,5 +7,7 @@ class PostsController < ApplicationController
     @n_pages = (@user.posts_counter.to_f / 2).ceil
   end
 
-  def show; end
+  def show
+    @post = Post.find(params['id'].to_i)
+  end
 end
