@@ -1,0 +1,17 @@
+<%= form_with(model: post) do |form| %>
+  <% if post.last.errors.any? %>
+    <div style="color: red">
+      <ul>
+        <% post.last.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.text_field :title, placeholder:'title' %>
+    <%= form.text_area :text, placeholder:'Contents' %>
+    <%= form.submit %>
+  </div>
+<% end %>
