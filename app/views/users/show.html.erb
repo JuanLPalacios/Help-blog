@@ -5,6 +5,10 @@
     <p><%= @user.bio %></p>
 </div>
 
+<section class="action-butons">
+  <%= link_to "New post", new_user_post_path(@user), class: 'btn' %>
+</section>
+
 <section>
     <% @user.most_recent_posts.each do |post| %>
         <a href="<%= user_post_path(post.author_id, post) %>">
