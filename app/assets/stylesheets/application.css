@@ -2,6 +2,11 @@
   box-sizing: border-box;
 }
 
+.justify-right {
+  display: flex;
+  justify-content: flex-end;
+}
+
 input[type="submit"] {
   font-weight: bold;
   font-size: 0.9rem;
@@ -17,6 +22,15 @@ header.post-header {
 .comment-user {
   width: 3rem;
   font-weight: bold;
+}
+
+.comment-text {
+  flex-grow: 1;
+}
+
+form .comment-text {
+  display: flex;
+  flex-direction: column;
 }
 
 .comment-card {

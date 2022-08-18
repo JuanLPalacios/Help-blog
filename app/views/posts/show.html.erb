@@ -14,5 +14,6 @@
     <% @post.comments.each do |comment| %>
         <%= render partial: "comment", locals: { comment: comment } %>
     <% end %>
-    <%= render partial: "comments/form", locals: { comment: [@user,@post,@post.comments.new] } %>
+    <hr>
+    <%= render partial: "comments/form", locals: { comment: [@user,@post,@post.comments.new], current_user: @current_user } %>
 </section> 
