@@ -1,8 +1,11 @@
 <%= render partial: "li_user", locals: { user: @user } %>
+<section class="action-butons">
+  <%= link_to "New post", new_user_post_path, class: 'btn' %>
+</section>
 <section>
     <% @posts.each do |post| %>
         <a href="<%= user_post_path(post.author_id, post) %>">
-            <%= render partial: "li_post", locals: { post: post } %>
+            <%= render partial: "li_post", locals: { post: post, author: @user } %>
         </a>
         <section class="comment-list box">
             <% post.most_recent_comments.reverse.each do |comment| %>

@@ -1,0 +1,11 @@
+<%= form_with(model: comment) do |form| %>
+  <div class="comment-card">
+    <div class="comment-user"><%= current_user.name %></div>
+    <div class="comment-text">
+      <%= form.text_area :text, placeholder:'Contents' %>
+    </div>
+  </div>
+  <div class="justify-right">
+    <%= form.submit 'Comment'%>
+  </div>
+<% end %>

@@ -7,7 +7,32 @@ class PostsController < ApplicationController
     @n_pages = (@user.posts_counter.to_f / 2).ceil
   end
 
+  def new
+    @post = Post.new
+    @user = User.find(params['user_id'].to_i)
+  end
+
+  def create
+    @post = Post.new(post_params)
+    @post.author = current_user
+    @user = current_user
+
+    if @post.save
+      redirect_to user_post_path(current_user, @post)
+    else
+      render :new, status: :unprocessable_entity
+    end
+  end
+
   def show
     @post = Post.find(params['id'].to_i)
+    @user = User.find(params['user_id'].to_i)
+    @current_user = current_user
+  end
+
+  private
+
+  def post_params
+    params.require(:post).permit(:title, :text)
   end
 end
