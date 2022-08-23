@@ -67,6 +67,7 @@ end
 
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
+  gem 'bullet'
   gem 'capybara'
   gem 'ffi'
   gem 'rails-controller-testing'
