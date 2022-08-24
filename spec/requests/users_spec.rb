@@ -93,4 +93,42 @@ RSpec.describe 'Users', type: :request do
       expect(page).to have_current_path("/users/#{@user.id}/posts")
     end
   end
+
+  describe 'Post show page' do
+    before(:example) do
+      @post_one = Post.find_by(id: 1)
+      @user_one = @post_one.author
+      visit user_post_path(@user_one, @post_one)
+    end
+
+    before(:all) do
+      @post = Post.find_by(id: 1)
+      @user = @post.author
+    end
+    it "I can see the post's title." do
+      expect(page).to have_content(@post.title)
+    end
+    it 'I can see who wrote the post.' do
+      expect(page).to have_content(@user.name)
+    end
+    it 'I can see how many comments it has.' do
+      expect(page).to have_content("Comments: #{@post.comments_counter}")
+    end
+    it 'I can see how many likes it has.' do
+      expect(page).to have_content("Likes: #{@post.likes_counter}")
+    end
+    it 'I can see the post body.' do
+      expect(page).to have_content(@post.text)
+    end
+    it 'I can see the username of each commentor.' do
+      @post.comments.each do |comment|
+        expect(page).to have_content(comment.author.name)
+      end
+    end
+    it 'I can see the comment each commentor left.' do
+      @post.comments.each do |comment|
+        expect(page).to have_content(comment.text)
+      end
+    end
+  end
 end
