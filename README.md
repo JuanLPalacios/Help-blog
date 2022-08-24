@@ -1,6 +1,6 @@
 # Help-blog
 
-a example ruby on rails Help blog for sharing info in times of need
+an example ruby on rails Help blog for sharing info in times of need
 
 ## Built With
 
@@ -10,7 +10,7 @@ a example ruby on rails Help blog for sharing info in times of need
 
 ## Getting Started
 
-Start by seting up the enviroment
+Start by setting up the environment
 
 ```
 bundle install
@@ -20,7 +20,7 @@ rails db:seed RAILS_ENV=development
 rails db:seed RAILS_ENV=test
 ```
 
-Make sure that the defaut user for system exist in postgres to avoid error `Fatal: Role '[user_name]' does not exist`
+Make sure that the default user for the system exists in Postgres to avoid the error Fatally`:` Role '[user_name]' does not exist`
 
 ```
 sudo su - posgres
@@ -36,7 +36,7 @@ rails s
 
 ## Unit Tests
 
-To run al tests run
+To run all tests run
 
 ```
 rspec --force-color --format documentation
