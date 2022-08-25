@@ -14,9 +14,9 @@
         </section>
     <% end %>
 </section>
-<section class="action-butons">
+<section class="action-butons" id="pagination">
     <% (1..@n_pages).each do |page| %>
         <%= link_to page.to_s, user_posts_path(@user,page: page), class:'btn' if @page != page %>
         <%= content_tag :div, page.to_s, class: ['btn', 'disabled'] if @page == page %>
     <% end %>
-</section> 
+</section>
