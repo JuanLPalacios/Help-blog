@@ -26,6 +26,11 @@ class PostsController < ApplicationController
     end
   end
 
+  def destroy
+    @post.destroy
+    edirect_to user_posts_path(params[:user_id]), notice: "Post deleted."
+  end
+
   def show
     @post = Post
       .includes(:comments, comments: [:author])
