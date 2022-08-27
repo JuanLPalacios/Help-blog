@@ -8,5 +8,6 @@ Rails.application.routes.draw do
       end
     end
   end
+  post '/auth/login', to: 'auth#login'
   root "users#index"
 end

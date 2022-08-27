@@ -4,8 +4,10 @@ class CommentsController < ApplicationController
     @comment.author = current_user
     @comment.post_id = params[:post_id].to_i
     @comment.save
-    puts @comment
-    redirect_to user_post_path(params[:user_id], params[:post_id])
+    respond_to do |format|
+      format.html { redirect_to user_post_path(params[:user_id], params[:post_id]) }
+      format.json { render :show, status: :created, location: @comment }
+    end
   end
 
   def destroy
