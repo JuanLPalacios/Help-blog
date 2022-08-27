@@ -2,6 +2,11 @@
   box-sizing: border-box;
 }
 
+.post-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
 .justify-right {
   display: flex;
   justify-content: flex-end;
@@ -26,6 +31,26 @@ header.post-header {
 
 .comment-text {
   flex-grow: 1;
+}
+
+.comment-card > .comment-actions {
+  display: none;
+}
+
+.comment-card:hover > .comment-actions {
+  display: block;
+}
+
+section.edit-post > form,
+section.login > form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.comment-card:hover > .comment-actions > form {
+  position: absolute;
+  margin-left: -3.5em;
 }
 
 form .comment-text {
@@ -94,13 +119,6 @@ article.post,
 
 section.login {
   margin: 24px calc(50vw - 150px);
-}
-
-section.edit-post > form,
-section.login > form {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
 }
 
 form .field_with_errors,
