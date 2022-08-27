@@ -12,5 +12,4 @@ class Ability
       can :destroy, Comment, author: user
     end
   end
-  end
 end

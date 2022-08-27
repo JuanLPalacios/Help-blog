@@ -10,7 +10,7 @@ class CommentsController < ApplicationController
 
   def destroy
     @comment.destroy
-    edirect_to user_post_path(params[:user_id], params[:post_id]), notice: "Comment deleted."
+    edirect_to user_post_path(params[:user_id], params[:post_id]), notice: 'Comment deleted.'
   end
 
   private

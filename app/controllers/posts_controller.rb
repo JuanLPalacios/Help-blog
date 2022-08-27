@@ -28,7 +28,7 @@ class PostsController < ApplicationController
 
   def destroy
     @post.destroy
-    edirect_to user_posts_path(params[:user_id]), notice: "Post deleted."
+    edirect_to user_posts_path(params[:user_id]), notice: 'Post deleted.'
   end
 
   def show
