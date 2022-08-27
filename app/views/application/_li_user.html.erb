@@ -1,5 +1,5 @@
 <article class="user-card">
-    <%= image_tag(user.photo) %>
+    <%= image_tag(user.photo.blank? ? 'https://via.placeholder.com/100x100.png?text=No+Photo' : user.photo) %>
     <div>
         <h1>
             <%= user.name %>
