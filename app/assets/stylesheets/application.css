@@ -85,16 +85,39 @@ article.user-card,
 article.post-card,
 .comment-list,
 article.post,
-.edit-post {
+.edit-post,
+.login {
   margin: 24px;
   background: #fafafa;
   padding: 10px;
 }
 
-section.edit-post > form {
+section.login {
+  margin: 24px calc(50vw - 150px);
+}
+
+section.edit-post > form,
+section.login > form {
   display: flex;
   flex-direction: column;
   gap: 14px;
+}
+
+form .field_with_errors,
+form .field {
+  display: flex;
+  flex-direction: column;
+}
+
+form .field_with_errors > input[type='checkbox'],
+form .field > input[type='checkbox'] {
+  align-self: baseline;
+}
+
+.field_with_errors > input[type='checkbox'] + label,
+.field > input[type='checkbox'] + label {
+  position: absolute;
+  margin-left: 30px;
 }
 
 form .field_with_errors {
